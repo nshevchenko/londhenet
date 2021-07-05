@@ -1,0 +1,14 @@
+com/example/newapp/lib/ui/DataBindingTriggerClass.java
+ com.example.newapp.lib.ui.DataBindingTriggerClass
+com/example/newapp/lib/ui/DataBinderMapperImpl.java
+ com.example.newapp.lib.ui.DataBinderMapperImpl
+ com.example.newapp.lib.ui.DataBinderMapperImpl$InnerBrLookup
+ com.example.newapp.lib.ui.DataBinderMapperImpl$InnerLayoutIdLookup
+com/example/newapp/lib/ui/BR.java
+ com.example.newapp.lib.ui.BR
+com/example/newapp/lib/ui/BuildConfig.java
+ com.example.newapp.lib.ui.BuildConfig
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent

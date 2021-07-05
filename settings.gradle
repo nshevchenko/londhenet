@@ -2,8 +2,10 @@ include ':app'
 
 // lib
 include ':lib_testing'
+include ':lib_ui'
+include ':lib_core'
 
 // feature
-include ':login'
+include ':feature_login'
 
 rootProject.name = "NewApp"

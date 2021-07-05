@@ -1,0 +1,9 @@
+apply from: rootProject.file('buildScripts/common-lib.gradle')
+apply from: rootProject.file('buildScripts/common-android-test.gradle')
+
+dependencies {
+    api Libs.androidx_app_compat
+    api Libs.material
+    api Libs.constraintlayout
+    api Libs.glide
+}

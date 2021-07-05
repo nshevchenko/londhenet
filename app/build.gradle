@@ -22,3 +22,11 @@ android {
         jvmTarget = '1.8'
     }
 }
+
+dependencies {
+    kapt Libs.dagger_android_processor
+    kapt Libs.dagger_compiler
+
+    implementation project(":feature_login")
+
+}

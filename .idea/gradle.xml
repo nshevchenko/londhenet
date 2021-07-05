@@ -12,8 +12,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/feature_login" />
+            <option value="$PROJECT_DIR$/lib_core" />
             <option value="$PROJECT_DIR$/lib_testing" />
-            <option value="$PROJECT_DIR$/login" />
+            <option value="$PROJECT_DIR$/lib_ui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

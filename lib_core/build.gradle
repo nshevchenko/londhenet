@@ -1,0 +1,7 @@
+apply from: rootProject.file('buildScripts/common-lib.gradle')
+
+dependencies {
+    implementation Libs.navigation_fragment_ktx
+
+    api Libs.dagger
+}

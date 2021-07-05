@@ -2,5 +2,8 @@ apply plugin: "com.android.library"
 apply from: rootProject.file("buildScripts/common.gradle")
 
 dependencies {
+    api project(':lib_core')
+    api project(':lib_ui')
+
     testImplementation project(':lib_testing')
 }
