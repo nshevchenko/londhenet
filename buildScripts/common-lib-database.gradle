@@ -1,0 +1,5 @@
+dependencies {
+    kapt Libs.room_compiler
+    implementation Libs.room
+    implementation Libs.room_ktx
+}

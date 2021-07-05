@@ -1,0 +1,55 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply from: rootProject.file("buildScripts/common-build-types.gradle")
+
+android {
+
+    buildToolsVersion AppConfig.BUILD_TOOLS_VERSION
+    compileSdkVersion AppConfig.COMPILE_SDK_VERSION
+
+    defaultConfig {
+        minSdkVersion AppConfig.MIN_SDK_VERSION
+        targetSdkVersion AppConfig.TARGET_SDK_VERSION
+    }
+
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+            all {
+                jvmArgs '-noverify'
+                systemProperty 'robolectric.logging.enabled', 'true'
+            }
+        }
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+        animationsDisabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    api Libs.kotlin_stdlib_jdk7
+    api Libs.kotlinx_coroutines_core
+    api Libs.kotlinx_coroutines_android
+    api Libs.timber
+
+    kapt Libs.dagger_android_processor
+    kapt Libs.dagger_compiler
+
+    api Libs.dagger
+    api Libs.dagger_android_support
+}

@@ -1,0 +1,24 @@
+apply from: rootProject.file('buildScripts/common-lib.gradle')
+apply from: rootProject.file('buildScripts/common-android-test.gradle')
+
+android {
+    packagingOptions {
+//        exclude 'licenses/javolution.license.TXT'
+//        exclude 'licenses/thoughtworks.TXT'
+//        exclude 'META-INF/plexus/components.xml'
+//        exclude 'META-INF/DEPENDENCIES'
+//        exclude 'org/cyberneko/html/res/HTMLspecial.properties'
+//        exclude 'org/apache/maven/project/pom-4.0.0.xml'
+    }
+}
+
+dependencies {
+    api Libs.kotlinx_coroutines_test
+    api Libs.androidx_test_rules
+    api Libs.core_testing
+    api(Libs.mockk) { exclude module: 'objenesis' }
+    api Libs.junit_junit
+    api Libs.androidx_test_ext_junit
+    api Libs.assertj_android
+    api Libs.assertj_core
+}

@@ -1,0 +1,16 @@
+apply plugin: 'com.dynatrace.instrumentation'
+
+dynatrace {
+    pluginEnabled environment.isDynatraceEnabled
+    configurations {
+        sampleConfig {
+            autoStart {
+                applicationId environment.dynatraceApplicationId
+                beaconUrl environment.dynatraceBeaconUrl
+            }
+            debug {
+                agentLogging environment.isDynatraceEnabled
+            }
+        }
+    }
+}

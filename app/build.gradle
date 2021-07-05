@@ -1,0 +1,24 @@
+apply plugin: 'com.android.application'
+
+apply from: rootProject.file('buildScripts/common.gradle')
+apply from: rootProject.file('buildScripts/common-android-test.gradle')
+apply from: rootProject.file("buildScripts/common-lib-database.gradle")
+
+android {
+    defaultConfig {
+        applicationId AppConfig.APPLICATION_ID
+
+        versionCode AppConfig.VERSION_CODE
+        versionName AppConfig.VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}

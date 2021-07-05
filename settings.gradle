@@ -1,0 +1,9 @@
+include ':app'
+
+// lib
+include ':lib_testing'
+
+// feature
+include ':login'
+
+rootProject.name = "NewApp"

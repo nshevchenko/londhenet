@@ -1,0 +1,38 @@
+apply from: rootProject.file("buildScripts/common.gradle")
+
+android {
+    defaultConfig {
+        testInstrumentationRunner "com.ford.fcsdriverinterface.runner.UiTestAppRunner"
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled = true
+        }
+    }
+
+    testOptions {
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
+    }
+}
+
+dependencies {
+
+    androidTestImplementation Libs.androidx_test_espresso_web
+    androidTestImplementation Libs.androidx_test_runner
+    androidTestImplementation Libs.androidx_test_ext_junit
+    androidTestImplementation Libs.androidx_test_rules
+    androidTestImplementation(Libs.mockk_android) { exclude module: 'objenesis' }
+    androidTestImplementation Libs.objenesis
+    androidTestImplementation Libs.assertj_core
+    androidTestImplementation(Libs.barista) { exclude group: 'org.jetbrains.kotlin' }
+
+    androidTestUtil Libs.orchestrator
+
+    kaptAndroidTest Libs.dagger_compiler
+    kaptAndroidTest Libs.dagger_android_processor
+}
