@@ -21,4 +21,6 @@ dependencies {
     api Libs.androidx_test_ext_junit
     api Libs.assertj_android
     api Libs.assertj_core
+
+    implementation project(':lib_core')
 }

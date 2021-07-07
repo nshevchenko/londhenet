@@ -2,7 +2,7 @@ package com.example.newapp.injection
 
 import android.app.Application
 import com.example.newapp.App
-import com.ford.fcsdriverinterface.lib.core.injection.ApplicationScope
+import com.example.newapp.lib.core.injection.ApplicationScope
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector

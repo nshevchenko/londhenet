@@ -1,10 +1,6 @@
 apply from: rootProject.file("buildScripts/common.gradle")
 
 android {
-    defaultConfig {
-        testInstrumentationRunner "com.ford.fcsdriverinterface.runner.UiTestAppRunner"
-    }
-
     buildTypes {
         debug {
             testCoverageEnabled = true

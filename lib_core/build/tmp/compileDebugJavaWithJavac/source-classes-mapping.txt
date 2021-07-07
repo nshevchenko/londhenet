@@ -1,8 +1,11 @@
 com/example/newapp/lib/core/BuildConfig.java
  com.example.newapp.lib.core.BuildConfig
-com/ford/fcsdriverinterface/lib/core/util/Language_Factory.java
- com.ford.fcsdriverinterface.lib.core.util.Language_Factory
- com.ford.fcsdriverinterface.lib.core.util.Language_Factory$InstanceHolder
+com/example/newapp/lib/core/coroutines/CoroutineDispatchersProvider_Factory.java
+ com.example.newapp.lib.core.coroutines.CoroutineDispatchersProvider_Factory
+ com.example.newapp.lib.core.coroutines.CoroutineDispatchersProvider_Factory$InstanceHolder
+com/example/newapp/lib/core/util/DeviceInfo_Factory.java
+ com.example.newapp.lib.core.util.DeviceInfo_Factory
+ com.example.newapp.lib.core.util.DeviceInfo_Factory$InstanceHolder
 com/example/newapp/lib/core/DataBinderMapperImpl.java
  com.example.newapp.lib.core.DataBinderMapperImpl
  com.example.newapp.lib.core.DataBinderMapperImpl$InnerBrLookup
@@ -15,6 +18,3 @@ androidx/databinding/DataBindingComponent.java
  androidx.databinding.DataBindingComponent
 com/example/newapp/lib/core/DataBindingTriggerClass.java
  com.example.newapp.lib.core.DataBindingTriggerClass
-com/ford/fcsdriverinterface/lib/core/util/TimeOffset_Factory.java
- com.ford.fcsdriverinterface.lib.core.util.TimeOffset_Factory
- com.ford.fcsdriverinterface.lib.core.util.TimeOffset_Factory$InstanceHolder

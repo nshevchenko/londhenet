@@ -1,4 +1,4 @@
-package com.ford.fcsdriverinterface.lib.core.injection
+package com.example.newapp.lib.core.injection
 
 import javax.inject.Scope
 

@@ -1,4 +1,4 @@
-package com.ford.fcsdriverinterface.lib.core.coroutines
+package com.example.newapp.lib.core.coroutines
 
 import kotlin.coroutines.CoroutineContext
 

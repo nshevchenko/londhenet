@@ -1,6 +1,6 @@
 package com.ford.fcsdriverinterface.lib.testing
 
-import com.ford.fcsdriverinterface.lib.core.coroutines.CoroutineDispatchers
+import com.example.newapp.lib.core.coroutines.CoroutineDispatchers
 import io.mockk.every
 import kotlinx.coroutines.Dispatchers
 
