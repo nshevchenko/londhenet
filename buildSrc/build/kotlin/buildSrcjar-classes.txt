@@ -1,1 +1,1 @@
-/Users/mshevche/AndroidStudioProjects/NewApp/buildSrc/build/classes/kotlin/main/AppConfig.class:/Users/mshevche/AndroidStudioProjects/NewApp/buildSrc/build/classes/kotlin/main/Libs.class:/Users/mshevche/AndroidStudioProjects/NewApp/buildSrc/build/classes/kotlin/main/Versions.class
+/Users/npf/Projects/londhenet/buildSrc/build/classes/kotlin/main/AppConfig.class:/Users/npf/Projects/londhenet/buildSrc/build/classes/kotlin/main/Libs.class:/Users/npf/Projects/londhenet/buildSrc/build/classes/kotlin/main/Versions.class

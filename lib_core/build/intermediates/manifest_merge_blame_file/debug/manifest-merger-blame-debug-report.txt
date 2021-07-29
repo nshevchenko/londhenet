@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="21"
-6-->/Users/mshevche/AndroidStudioProjects/NewApp/lib_core/src/main/AndroidManifest.xml
+6-->/Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml
 7        android:targetSdkVersion="30" />
-7-->/Users/mshevche/AndroidStudioProjects/NewApp/lib_core/src/main/AndroidManifest.xml
+7-->/Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml
 8
 9</manifest>

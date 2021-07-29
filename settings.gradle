@@ -8,5 +8,6 @@ include ':lib_network'
 
 // feature
 include ':feature_login'
+include ':feature_map'
 
 rootProject.name = "NewApp"

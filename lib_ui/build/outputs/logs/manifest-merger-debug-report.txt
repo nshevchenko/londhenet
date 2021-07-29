@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml:1:1-49
-INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml:1:1-49
-INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml:1:1-49
+ADDED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml:1:1-49
+INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml:1:1-49
+INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml:1:1-49
 	package
-		ADDED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml:1:11-46
-		INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
-		INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
+		ADDED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml:1:11-46
+		INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
+		INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml:1:1-49
+		ADDED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml:1:1-49
 uses-sdk
-INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
-INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
-INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
-INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
+INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
+INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
+INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
+INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
-		ADDED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
-		INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
+		INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
+		ADDED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
+		INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
-		ADDED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
-		INJECTED from /Users/mshevche/AndroidStudioProjects/NewApp/lib_ui/src/main/AndroidManifest.xml
+		INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
+		ADDED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
+		INJECTED from /Users/npf/Projects/londhenet/lib_ui/src/main/AndroidManifest.xml
