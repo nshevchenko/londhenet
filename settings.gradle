@@ -4,6 +4,7 @@ include ':app'
 include ':lib_testing'
 include ':lib_ui'
 include ':lib_core'
+include ':lib_network'
 
 // feature
 include ':feature_login'

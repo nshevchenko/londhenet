@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/feature_login" />
             <option value="$PROJECT_DIR$/lib_core" />
+            <option value="$PROJECT_DIR$/lib_network" />
             <option value="$PROJECT_DIR$/lib_testing" />
             <option value="$PROJECT_DIR$/lib_ui" />
           </set>

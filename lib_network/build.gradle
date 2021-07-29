@@ -1,0 +1,15 @@
+apply from: rootProject.file('buildScripts/common-lib.gradle')
+
+dependencies {
+    implementation project(':lib_core')
+    api Libs.retrofit
+    api Libs.moshi
+    api Libs.converter_moshi
+    api Libs.logging_interceptor
+    api Libs.kotlinx_coroutines_core
+    api Libs.kotlinx_coroutines_android
+
+    testImplementation project(':lib_testing')
+
+    kapt Libs.moshi_kotlin_codegen
+}

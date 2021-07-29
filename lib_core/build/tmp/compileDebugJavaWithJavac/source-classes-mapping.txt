@@ -1,5 +1,9 @@
+com/example/newapp/lib/core/feature/BaseFragment_MembersInjector.java
+ com.example.newapp.lib.core.feature.BaseFragment_MembersInjector
 com/example/newapp/lib/core/BuildConfig.java
  com.example.newapp.lib.core.BuildConfig
+com/example/newapp/lib/core/viewmodel/ViewModelFactory_Factory.java
+ com.example.newapp.lib.core.viewmodel.ViewModelFactory_Factory
 com/example/newapp/lib/core/coroutines/CoroutineDispatchersProvider_Factory.java
  com.example.newapp.lib.core.coroutines.CoroutineDispatchersProvider_Factory
  com.example.newapp.lib.core.coroutines.CoroutineDispatchersProvider_Factory$InstanceHolder
