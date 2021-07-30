@@ -1,8 +1,15 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+
+    // Add secrets-gradle-plugin here
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
 
 apply from: rootProject.file('buildScripts/common.gradle')
 apply from: rootProject.file('buildScripts/common-android-test.gradle')
-apply from: rootProject.file("buildScripts/common-lib-database.gradle")
+
 
 android {
     defaultConfig {
@@ -28,5 +35,5 @@ dependencies {
     kapt Libs.dagger_compiler
 
     implementation project(":feature_login")
-
+    implementation project(":feature_map")
 }

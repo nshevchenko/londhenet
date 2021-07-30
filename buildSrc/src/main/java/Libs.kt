@@ -23,12 +23,6 @@ object Libs {
     const val kotlinx_coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:" +
             Versions.org_jetbrains_kotlinx_kotlinx_coroutines
 
-    const val detekt_formatting = "io.gitlab.arturbosch.detekt:detekt-formatting:" +
-            Versions.io_gitlab_arturbosch_detekt
-
-    const val detekt_gradle_plugin = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:" +
-            Versions.io_gitlab_arturbosch_detekt
-
     const val converter_moshi = "com.squareup.retrofit2:converter-moshi:" +
             Versions.com_squareup_retrofit2
 
@@ -92,6 +86,14 @@ object Libs {
 
     const val material = "com.google.android.material:material:" + Versions.material
 
+    const val maps = "com.google.android.gms:play-services-maps:" + Versions.maps
+
+    const val maps_ktx = "com.google.maps.android:maps-ktx:" + Versions.maps_ktx
+
+    const val floating_search_bar = "com.github.arimorty:floatingsearchview:" + Versions.floating_search_bar
+
+    const val maps_ktx_utils = "com.google.maps.android:maps-utils-ktx:" + Versions.maps_ktx_utils
+
     const val timber = "com.jakewharton.timber:timber:" + Versions.timber
 
     const val glide = "com.github.bumptech.glide:glide:" + Versions.glide
@@ -111,51 +113,23 @@ object Libs {
     const val assertj_core = "org.assertj:assertj-core:" +
             Versions.assertj_core_version
 
-    const val androidx_test_espresso_web = "androidx.test.espresso:espresso-web:" + Versions.androidx_espresso_web
-
-    const val espresso_idling_resource_concurrent = "com.android.support.test.espresso.idling:idling-concurrent:" + Versions.concurrent_espresso_idling
-
-    const val espresso_idling_resource_okhttp = "com.jakewharton.espresso:okhttp3-idling-resource:" + Versions.okhttp3_espresso_idling
-
     const val androidx_test_runner = "androidx.test:runner:" + Versions.androidx_test
 
     const val objenesis = "org.objenesis:objenesis:" + Versions.objenesis
 
     const val barista = "com.schibsted.spain:barista:" + Versions.barista
 
-    const val dynatracePlugin = "com.dynatrace.tools.android:gradle-plugin:" + Versions.dynatrace
-
     const val leakcanary = "com.squareup.leakcanary:leakcanary-android:" + Versions.leakcanary
-
-    const val rxandroid = "io.reactivex.rxjava2:rxandroid:" + Versions.rxandroid
-
-    const val rxjava = "io.reactivex.rxjava2:rxjava:" + Versions.rxjava
-
-    const val room = "androidx.room:room-runtime:" + Versions.room
-
-    const val room_compiler = "androidx.room:room-compiler:" + Versions.room
-
-    const val room_ktx = "androidx.room:room-ktx:" + Versions.room
 
     const val orchestrator = "androidx.test:orchestrator:" + Versions.orchestrator
 
     const val jacoco = "org.jacoco:org.jacoco.core:" + Versions.jacoco
-    const val vision = "com.google.android.gms:play-services-vision:" + Versions.vision
 
     const val swipe_to_refresh =
         "androidx.swiperefreshlayout:swiperefreshlayout:" + Versions.swipe_to_refresh
 
     const val transition = "androidx.transition:transition:" + Versions.transition
 
-    const val play_core = "com.google.android.play:core:" + Versions.play_core
-
     const val ktlint_gradle = "org.jlleitschuh.gradle:ktlint-gradle:" + Versions.ktlint_gradle
 
-    const val analytics = "com.ford:analytics:" + Versions.analytics_version
-
-    const val analytics_amplitude = "com.ford:analytics-amplitude:" + Versions.analytics_amplitude_version
-
-    const val analytics_adobe = "com.ford:analytics-adobe:" + Versions.analytics_version
-
-    const val amplitude = "com.amplitude:android-sdk:" + Versions.amplitude_version
 }

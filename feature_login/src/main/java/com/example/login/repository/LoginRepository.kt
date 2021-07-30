@@ -3,8 +3,9 @@ package com.example.login.repository
 import com.example.login.datasource.LoginApi
 import com.example.login.model.LoggedInUser
 import com.example.newapp.lib.network.ResultType
+import javax.inject.Inject
 
-class LoginRepository(
+class LoginRepository @Inject constructor(
     private val dataSource: LoginApi
 //    private val loginSharedPreferences: UserSharedPref
 ) {

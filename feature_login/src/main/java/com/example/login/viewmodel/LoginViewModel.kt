@@ -12,6 +12,7 @@ import com.example.login.viewmodel.LoginViewModel.Event.ShowError
 import com.example.newapp.lib.core.coroutines.CoroutineDispatchers
 import com.example.newapp.lib.network.ResultType
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 interface LoginViewModel {
 
@@ -23,7 +24,7 @@ interface LoginViewModel {
     val event: LiveData<Event>
 }
 
-class LoginViewModelImpl(
+class LoginViewModelImpl @Inject constructor(
     private val loginRepository: LoginRepository,
     private val dispatchers: CoroutineDispatchers
 ) : LoginViewModel, ViewModel() {

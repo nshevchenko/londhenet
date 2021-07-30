@@ -3,6 +3,7 @@ package com.example.login.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import com.example.login.datasource.LoginService
 import com.example.login.ui.LoginFragment
 import com.example.login.viewmodel.LoginViewModel
 import com.example.login.viewmodel.LoginViewModelImpl
@@ -12,9 +13,14 @@ import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
+import retrofit2.Retrofit
 
 @Module(includes = [LoginBindingsModule::class])
 internal object LoginModule {
+
+    @Provides
+    fun provideLogbookService(retrofit: Retrofit): LoginService =
+        retrofit.create(LoginService::class.java)
 
     @Provides
     fun provideNavController(fragment: LoginFragment) =

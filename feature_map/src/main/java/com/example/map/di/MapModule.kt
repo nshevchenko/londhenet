@@ -3,6 +3,7 @@ package com.example.map.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import com.example.map.repository.MapRepository
 import com.example.map.ui.MapFragment
 import com.example.map.viewmodel.MapViewModel
 import com.example.map.viewmodel.MapViewModelImpl
@@ -34,4 +35,5 @@ internal interface MapBindingsModule {
     @IntoMap
     @ViewModelKey(MapViewModelImpl::class)
     fun provideMapViewModelImpl(viewModel: MapViewModelImpl): ViewModel
+
 }

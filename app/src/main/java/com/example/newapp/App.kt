@@ -1,9 +1,9 @@
 package com.example.newapp
 
 import androidx.databinding.DataBindingUtil
-import com.example.newapp.injection.DaggerAppComponent
-import com.example.newapp.injection.databinding.DaggerBindingComponent
-import com.example.newapp.injection.databinding.DataBindingModule
+import com.example.newapp.di.DaggerAppComponent
+import com.example.newapp.di.databinding.DaggerBindingComponent
+import com.example.newapp.di.databinding.DataBindingModule
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 
