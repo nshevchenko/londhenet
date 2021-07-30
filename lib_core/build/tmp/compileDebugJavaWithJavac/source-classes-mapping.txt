@@ -1,5 +1,8 @@
 com/example/newapp/lib/core/feature/BaseFragment_MembersInjector.java
  com.example.newapp.lib.core.feature.BaseFragment_MembersInjector
+com/example/newapp/lib/core/user/UserSharedPref_Factory.java
+ com.example.newapp.lib.core.user.UserSharedPref_Factory
+ com.example.newapp.lib.core.user.UserSharedPref_Factory$InstanceHolder
 com/example/newapp/lib/core/coroutines/CoroutineDispatchersProvider_Factory.java
  com.example.newapp.lib.core.coroutines.CoroutineDispatchersProvider_Factory
  com.example.newapp.lib.core.coroutines.CoroutineDispatchersProvider_Factory$InstanceHolder

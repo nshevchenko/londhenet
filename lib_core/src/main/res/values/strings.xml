@@ -9,5 +9,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="standard_error_title">Sorry, an error occured</string>
+    <string name="standard_error_title">Sorry, an error occurred.</string>
+    <string name="map_id">4d21ece9c3da6250</string>
+    <string name="error_input_email">Please provide a valid email address.</string>
+    <string name="error_input_password">Please create a stronger password.</string>
 </resources>

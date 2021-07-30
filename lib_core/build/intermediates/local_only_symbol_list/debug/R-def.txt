@@ -12,9 +12,12 @@ dimen activity_vertical_margin
 string action_sign_in
 string action_sign_in_short
 string app_name
+string error_input_email
+string error_input_password
 string invalid_password
 string invalid_username
 string login_failed
+string map_id
 string prompt_email
 string prompt_password
 string standard_error_title

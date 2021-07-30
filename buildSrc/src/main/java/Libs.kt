@@ -86,7 +86,7 @@ object Libs {
 
     const val material = "com.google.android.material:material:" + Versions.material
 
-    const val maps = "com.google.android.gms:play-services-maps:" + Versions.maps
+    const val maps = "com.google.android.libraries.maps:maps:" + Versions.maps
 
     const val maps_ktx = "com.google.maps.android:maps-ktx:" + Versions.maps_ktx
 

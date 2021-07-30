@@ -6,20 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.map.R
 import com.example.map.databinding.FragmentMapBinding
+import com.example.map.model.Pin
 import com.example.map.viewmodel.MapViewModel
 import com.example.map.viewmodel.MapViewModel.Event
 import com.example.newapp.lib.core.feature.BaseFragment
 import com.example.newapp.lib.core.util.observe
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapView
-import com.google.android.gms.maps.model.LatLng
-import com.google.maps.android.ktx.addMarker
+import com.google.android.libraries.maps.GoogleMap
+import com.google.android.libraries.maps.MapView
+import com.google.android.libraries.maps.model.MarkerOptions
 import javax.inject.Inject
 
 class MapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map) {
 
     @Inject
-    lateinit var loginViewModel: MapViewModel
+    lateinit var viewModel: MapViewModel
+
+    private var googleMap: GoogleMap? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,12 +36,12 @@ class MapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map) {
     }
 
     override fun onAfterCreated() {
-        loginViewModel.apply {
+        viewModel.apply {
             observe(event) { handleViewModelEvents(it) }
+            observe(pins) { displayPins(it) }
             binding.viewModel = this
         }
         binding.mapView.getMapAsync { map -> onMapReady(map) }
-
     }
 
     override fun onResume() {
@@ -48,8 +50,24 @@ class MapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map) {
     }
 
     private fun onMapReady(map: GoogleMap) {
-        map.addMarker {
-            position(LatLng(0.0, 0.0))
+        googleMap = map
+        customiseMap()
+        viewModel.loadPins()
+    }
+
+    private fun customiseMap() {
+    }
+
+    private fun displayPins(it: List<Pin>) {
+        addMarkers(it)
+    }
+
+    private fun addMarkers(pins: List<Pin>) {
+        pins.forEach { pin ->
+            val marker = MarkerOptions().apply {
+                position(pin.position)
+            }
+            googleMap?.addMarker(marker)
         }
     }
 

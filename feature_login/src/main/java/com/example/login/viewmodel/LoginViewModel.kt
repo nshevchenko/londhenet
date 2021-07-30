@@ -19,9 +19,13 @@ interface LoginViewModel {
     sealed class Event {
         object NavigateToMain : Event()
         data class ShowError(val message: Int) : Event()
+        object ShowUserNameError : Event()
+        object ShowPasswordError : Event()
     }
 
     val event: LiveData<Event>
+
+    fun onLoginClick(username: String, password: String)
 }
 
 class LoginViewModelImpl @Inject constructor(
@@ -32,7 +36,17 @@ class LoginViewModelImpl @Inject constructor(
     private val _event = MutableLiveData<Event>()
     override val event: LiveData<Event> = _event
 
-    fun login(username: String, password: String) {
+    override fun onLoginClick(username: String, password: String) {
+        if (!isUserNameValid(username)) {
+            _event.value = Event.ShowUserNameError
+        }
+        if (!isPasswordValid(password)) {
+            _event.value = Event.ShowPasswordError
+        }
+        login(username, password)
+    }
+
+    private fun login(username: String, password: String) {
         viewModelScope.launch(dispatchers.io) {
             val result = loginRepository.login(username, password)
 

@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.32447916666666665" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.340625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.340625" />
+        <entry key="feature_login/src/main/res/layout/fragment_login.xml" value="0.32447916666666665" />
         <entry key="feature_map/src/main/res/layout/fragment_map.xml" value="0.3596014492753623" />
       </map>
     </option>

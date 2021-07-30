@@ -22,7 +22,7 @@ object Versions {
     const val com_squareup_moshi = "1.8.0"
 
     const val com_google_dagger = "2.25.2"
-    const val maps = "17.0.1"
+    const val maps = "3.1.0-beta"
     const val maps_ktx = "3.1.0"
     const val maps_ktx_utils = "3.1.0"
     const val floating_search_bar = "e4503289d8"
