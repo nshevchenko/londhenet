@@ -4,7 +4,7 @@
     "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.newapp.lib.ui",
+  "applicationId": "com.cryptofuture.londhenet.lib.ui",
   "variantName": "debug",
   "elements": [
     {

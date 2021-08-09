@@ -1,4 +1,4 @@
-com.example.newapp.lib.core
+com.cryptofuture.londhenet.lib.core
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1383,12 +1383,17 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string performance1
+string performance2
 string prompt_email
 string prompt_password
+string search_coming_soon
+string search_hint
 string search_menu_title
 string standard_error_title
 string status_bar_notification_info_overflow
 string welcome
+string welcome_to_london_helium
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1787,7 +1792,7 @@ style Theme_MaterialComponents_Light_NoActionBar
 style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
-style Theme_NewApp
+style Theme_londhenet
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

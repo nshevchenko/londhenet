@@ -2,7 +2,7 @@ apply from: rootProject.file('buildScripts/common-feature.gradle')
 
 dependencies {
     implementation(Libs.maps)
+    implementation(Libs.maps_utils)
     implementation(Libs.maps_ktx)
-    implementation(Libs.maps_ktx_utils)
     implementation(Libs.floating_search_bar)
 }

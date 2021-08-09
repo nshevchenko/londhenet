@@ -18,8 +18,13 @@ string invalid_password
 string invalid_username
 string login_failed
 string map_id
+string performance1
+string performance2
 string prompt_email
 string prompt_password
+string search_coming_soon
+string search_hint
 string standard_error_title
 string welcome
-style Theme.NewApp
+string welcome_to_london_helium
+style Theme.londhenet

@@ -1382,12 +1382,17 @@ int string path_password_eye 0x0
 int string path_password_eye_mask_strike_through 0x0
 int string path_password_eye_mask_visible 0x0
 int string path_password_strike_through 0x0
+int string performance1 0x0
+int string performance2 0x0
 int string prompt_email 0x0
 int string prompt_password 0x0
+int string search_coming_soon 0x0
+int string search_hint 0x0
 int string search_menu_title 0x0
 int string standard_error_title 0x0
 int string status_bar_notification_info_overflow 0x0
 int string welcome 0x0
+int string welcome_to_london_helium 0x0
 int style AlertDialog_AppCompat 0x0
 int style AlertDialog_AppCompat_Light 0x0
 int style Animation_AppCompat_Dialog 0x0
@@ -1786,7 +1791,7 @@ int style Theme_MaterialComponents_Light_NoActionBar 0x0
 int style Theme_MaterialComponents_Light_NoActionBar_Bridge 0x0
 int style Theme_MaterialComponents_NoActionBar 0x0
 int style Theme_MaterialComponents_NoActionBar_Bridge 0x0
-int style Theme_NewApp 0x0
+int style Theme_londhenet 0x0
 int style Widget_AppCompat_ActionBar 0x0
 int style Widget_AppCompat_ActionBar_Solid 0x0
 int style Widget_AppCompat_ActionBar_TabBar 0x0

@@ -1,4 +1,4 @@
-package com.example.login
+package com.cryptofuture.login
 
 import org.junit.Test
 

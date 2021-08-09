@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.login.viewmodel.LoginViewModel" />
+            type="com.cryptofuture.login.viewmodel.LoginViewModel" />
     </data>
 
 

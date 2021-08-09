@@ -1,4 +1,4 @@
-package com.example.newapp
+package com.cryptofuture.londhenet
 
 import org.junit.Test
 

@@ -1,14 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:1-51
-INJECTED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:1-51
-INJECTED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:1-51
+ADDED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:1-59
+INJECTED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:1-59
+INJECTED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:1-59
 	package
-		ADDED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:11-48
+		ADDED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:11-56
 		INJECTED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml
 		INJECTED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:1-51
+		ADDED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml:1:1-59
 uses-sdk
 INJECTED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/npf/Projects/londhenet/lib_core/src/main/AndroidManifest.xml

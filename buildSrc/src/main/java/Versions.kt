@@ -23,9 +23,10 @@ object Versions {
 
     const val com_google_dagger = "2.25.2"
     const val maps = "3.1.0-beta"
+    const val maps_utils = "1.3.1"
     const val maps_ktx = "3.1.0"
     const val maps_ktx_utils = "3.1.0"
-    const val floating_search_bar = "e4503289d8"
+    const val floating_search_bar = "0.8.5"
 
     const val androidx_test = "1.2.0"
     const val androidx_test_ext_junit = "1.1.1"

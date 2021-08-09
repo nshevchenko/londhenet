@@ -13,4 +13,9 @@
     <string name="map_id">4d21ece9c3da6250</string>
     <string name="error_input_email">Please provide a valid email address.</string>
     <string name="error_input_password">Please create a stronger password.</string>
+    <string name="search_hint">Search a Location</string>
+    <string name="search_coming_soon">Search your city (soon)…</string>
+    <string name="welcome_to_london_helium">London Helium Network</string>
+    <string name="performance1">Ref RSS</string>
+    <string name="performance2">Beaconing Rate</string>
 </resources>

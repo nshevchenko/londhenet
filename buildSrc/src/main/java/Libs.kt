@@ -88,11 +88,11 @@ object Libs {
 
     const val maps = "com.google.android.libraries.maps:maps:" + Versions.maps
 
+    const val maps_utils = "com.google.maps.android:android-maps-utils-v3:" + Versions.maps_utils
+
     const val maps_ktx = "com.google.maps.android:maps-ktx:" + Versions.maps_ktx
 
-    const val floating_search_bar = "com.github.arimorty:floatingsearchview:" + Versions.floating_search_bar
-
-    const val maps_ktx_utils = "com.google.maps.android:maps-utils-ktx:" + Versions.maps_ktx_utils
+    const val floating_search_bar = "com.github.mancj:MaterialSearchBar:" + Versions.floating_search_bar
 
     const val timber = "com.jakewharton.timber:timber:" + Versions.timber
 

@@ -1,27 +1,27 @@
-com/example/newapp/lib/core/feature/BaseFragment_MembersInjector.java
- com.example.newapp.lib.core.feature.BaseFragment_MembersInjector
-com/example/newapp/lib/core/user/UserSharedPref_Factory.java
- com.example.newapp.lib.core.user.UserSharedPref_Factory
- com.example.newapp.lib.core.user.UserSharedPref_Factory$InstanceHolder
-com/example/newapp/lib/core/coroutines/CoroutineDispatchersProvider_Factory.java
- com.example.newapp.lib.core.coroutines.CoroutineDispatchersProvider_Factory
- com.example.newapp.lib.core.coroutines.CoroutineDispatchersProvider_Factory$InstanceHolder
-com/example/newapp/lib/core/viewmodel/ViewModelFactory_Factory.java
- com.example.newapp.lib.core.viewmodel.ViewModelFactory_Factory
-com/example/newapp/lib/core/BuildConfig.java
- com.example.newapp.lib.core.BuildConfig
-com/example/newapp/lib/core/util/DeviceInfo_Factory.java
- com.example.newapp.lib.core.util.DeviceInfo_Factory
- com.example.newapp.lib.core.util.DeviceInfo_Factory$InstanceHolder
-com/example/newapp/lib/core/DataBinderMapperImpl.java
- com.example.newapp.lib.core.DataBinderMapperImpl
- com.example.newapp.lib.core.DataBinderMapperImpl$InnerBrLookup
- com.example.newapp.lib.core.DataBinderMapperImpl$InnerLayoutIdLookup
-com/example/newapp/lib/core/BR.java
- com.example.newapp.lib.core.BR
+com/cryptofuture/londhenet/lib/core/BuildConfig.java
+ com.cryptofuture.londhenet.lib.core.BuildConfig
+com/cryptofuture/londhenet/lib/core/coroutines/CoroutineDispatchersProvider_Factory.java
+ com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchersProvider_Factory
+ com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchersProvider_Factory$InstanceHolder
+com/cryptofuture/londhenet/lib/core/util/DeviceInfo_Factory.java
+ com.cryptofuture.londhenet.lib.core.util.DeviceInfo_Factory
+ com.cryptofuture.londhenet.lib.core.util.DeviceInfo_Factory$InstanceHolder
+com/cryptofuture/londhenet/lib/core/BR.java
+ com.cryptofuture.londhenet.lib.core.BR
+com/cryptofuture/londhenet/lib/core/DataBinderMapperImpl.java
+ com.cryptofuture.londhenet.lib.core.DataBinderMapperImpl
+ com.cryptofuture.londhenet.lib.core.DataBinderMapperImpl$InnerBrLookup
+ com.cryptofuture.londhenet.lib.core.DataBinderMapperImpl$InnerLayoutIdLookup
+com/cryptofuture/londhenet/lib/core/user/UserSharedPref_Factory.java
+ com.cryptofuture.londhenet.lib.core.user.UserSharedPref_Factory
+ com.cryptofuture.londhenet.lib.core.user.UserSharedPref_Factory$InstanceHolder
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
+com/cryptofuture/londhenet/lib/core/viewmodel/ViewModelFactory_Factory.java
+ com.cryptofuture.londhenet.lib.core.viewmodel.ViewModelFactory_Factory
 androidx/databinding/DataBindingComponent.java
  androidx.databinding.DataBindingComponent
-com/example/newapp/lib/core/DataBindingTriggerClass.java
- com.example.newapp.lib.core.DataBindingTriggerClass
+com/cryptofuture/londhenet/lib/core/DataBindingTriggerClass.java
+ com.cryptofuture.londhenet.lib.core.DataBindingTriggerClass
+com/cryptofuture/londhenet/lib/core/feature/BaseFragment_MembersInjector.java
+ com.cryptofuture.londhenet.lib.core.feature.BaseFragment_MembersInjector

@@ -1,13 +1,13 @@
-com/example/newapp/lib/ui/DataBindingTriggerClass.java
- com.example.newapp.lib.ui.DataBindingTriggerClass
-com/example/newapp/lib/ui/DataBinderMapperImpl.java
- com.example.newapp.lib.ui.DataBinderMapperImpl
- com.example.newapp.lib.ui.DataBinderMapperImpl$InnerBrLookup
- com.example.newapp.lib.ui.DataBinderMapperImpl$InnerLayoutIdLookup
-com/example/newapp/lib/ui/BR.java
- com.example.newapp.lib.ui.BR
-com/example/newapp/lib/ui/BuildConfig.java
- com.example.newapp.lib.ui.BuildConfig
+com/cryptofuture/londhenet/lib/ui/DataBinderMapperImpl.java
+ com.cryptofuture.londhenet.lib.ui.DataBinderMapperImpl
+ com.cryptofuture.londhenet.lib.ui.DataBinderMapperImpl$InnerBrLookup
+ com.cryptofuture.londhenet.lib.ui.DataBinderMapperImpl$InnerLayoutIdLookup
+com/cryptofuture/londhenet/lib/ui/DataBindingTriggerClass.java
+ com.cryptofuture.londhenet.lib.ui.DataBindingTriggerClass
+com/cryptofuture/londhenet/lib/ui/BuildConfig.java
+ com.cryptofuture.londhenet.lib.ui.BuildConfig
+com/cryptofuture/londhenet/lib/ui/BR.java
+ com.cryptofuture.londhenet.lib.ui.BR
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
 androidx/databinding/DataBindingComponent.java
