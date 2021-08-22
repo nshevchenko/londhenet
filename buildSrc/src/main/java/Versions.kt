@@ -57,4 +57,6 @@ object Versions {
     const val transition = "1.3.1"
 
     const val ktlint_gradle = "10.0.0"
+
+    const val mp_chart = "v3.1.0"
 }

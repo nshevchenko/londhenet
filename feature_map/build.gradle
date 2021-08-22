@@ -5,4 +5,5 @@ dependencies {
     implementation(Libs.maps_utils)
     implementation(Libs.maps_ktx)
     implementation(Libs.floating_search_bar)
+    implementation(Libs.mp_chart)
 }

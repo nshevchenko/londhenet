@@ -18,4 +18,6 @@
     <string name="welcome_to_london_helium">London Helium Network</string>
     <string name="performance1">Ref RSS</string>
     <string name="performance2">Beaconing Rate</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
 </resources>

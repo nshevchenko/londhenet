@@ -1,5 +1,6 @@
 package com.cryptofuture.map.repository
 
+import com.cryptofuture.map.model.Directions
 import com.cryptofuture.map.model.Pin
 import com.google.android.libraries.maps.model.LatLng
 import org.json.JSONArray
@@ -24,8 +25,20 @@ class MapRepository @Inject constructor(
 private fun JSONObject.toDomain(): Pin =
     Pin(
         name = this.getString("name"),
-        online = this.getString("status") == "online",
-        performance1 = this.getDouble("performance1"),
-        performance2 = this.getDouble("performance2"),
-        position = LatLng(this.getDouble("latitude"), this.getDouble("longitude"))
+        address = this.getString("address"),
+//        online = this.getString("status") == "online",
+        online = true,
+        performance1 = this.getDouble("ref_rss"),
+        performance2 = this.getDouble("beac_rate"),
+        position = LatLng(this.getDouble("lat"), this.getDouble("lng")),
+        directionsPerf = Directions(
+            n = this.getInt("w_N"),
+            ne = this.getInt("w_NE"),
+            e = this.getInt("w_E"),
+            se = this.getInt("w_SE"),
+            s = this.getInt("w_S"),
+            sw = this.getInt("w_SW"),
+            w = this.getInt("w_W"),
+            nw = this.getInt("w_NW")
+        )
     )

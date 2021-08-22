@@ -4,11 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchers
+import com.cryptofuture.map.mapper.toUI
 import com.cryptofuture.map.model.MapPin
 import com.cryptofuture.map.model.Pin
+import com.cryptofuture.map.model.PinUI
 import com.cryptofuture.map.repository.MapRepository
 import com.cryptofuture.map.viewmodel.MapViewModel.Event
-import com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -18,7 +20,7 @@ interface MapViewModel {
     sealed class Event {
         object NavigateToMain : Event()
         data class ShowError(val message: Int) : Event()
-        class ShowDetails(val hotspot: Pin?) : Event()
+        class ShowDetails(val hotspot: PinUI) : Event()
     }
 
     val event: LiveData<Event>
@@ -54,8 +56,9 @@ class MapViewModelImpl @Inject constructor(
     }
 
     override fun onMarkerClicked(id: String?) {
-        val clickedPin = hotspots.value?.firstOrNull { it.name == id }
-        _event.value = Event.ShowDetails(clickedPin)
+        hotspots.value?.firstOrNull { it.name == id }?.let {
+            _event.value = Event.ShowDetails(it.toUI())
+        }
     }
 }
 

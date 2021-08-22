@@ -132,4 +132,6 @@ object Libs {
 
     const val ktlint_gradle = "org.jlleitschuh.gradle:ktlint-gradle:" + Versions.ktlint_gradle
 
+    const val mp_chart = "com.github.PhilJay:MPAndroidChart:" + Versions.mp_chart
+
 }

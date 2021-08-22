@@ -57,7 +57,7 @@
             android:background="#353535"
             android:orientation="vertical"
             app:behavior_hideable="true"
-            app:behavior_peekHeight="220dp"
+            app:behavior_peekHeight="300dp"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -74,36 +74,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:paddingBottom="2dp"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Title orca-hello-test" />
 
-                <View
-                    android:id="@+id/status"
-                    android:layout_width="10sp"
-                    android:layout_height="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/hotspot_online"
-                    app:layout_constraintBottom_toBottomOf="@id/statusText"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/statusText" />
-
                 <TextView
-                    android:id="@+id/statusText"
+                    android:id="@+id/address"
                     style="@style/TextAppearance.AppCompat.Caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="16dp"
-                    android:textColor="@color/light_gray"
+                    android:paddingBottom="16dp"
+                    android:textColor="@color/gray"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/status"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/name"
-                    tools:text="Online" />
+                    tools:text="11fjtGeLya3G3WyaGYU5RQUFDYxindLhgDqwYdybfmFktY7faY5" />
 
+                <View
+                    android:id="@+id/copyLabel"
+                    android:layout_width="14sp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/ic_baseline_content_copy_24"
+                    app:layout_constraintStart_toEndOf="@id/address"
+                    app:layout_constraintTop_toTopOf="@id/address" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
@@ -112,10 +111,11 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="#B6B6B6" />
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -130,8 +130,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:textColor="@color/white"
-                        tools:text="Ref RSS" />
+                        android:text="Ref RSS"
+                        android:textColor="@color/light_gray"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/perf1"
@@ -140,6 +141,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:textColor="@color/white"
+                        android:textSize="18sp"
                         tools:text="0.223" />
 
                     <TextView
@@ -148,8 +150,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:textColor="@color/white"
-                        tools:text="Beaconing Rate" />
+                        android:text="Beaconing Rate"
+                        android:textColor="@color/light_gray"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/perf2"
@@ -159,17 +162,32 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="32dp"
                         android:textColor="@color/white"
+                        android:textSize="18sp"
                         tools:text="0.223" />
                 </LinearLayout>
 
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:padding="22dp"
+                        android:src="@drawable/ic_wind_rose" />
+
+                    <com.github.mikephil.charting.charts.RadarChart
+                        android:id="@+id/chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:minHeight="150dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/graph" />
 
                 </FrameLayout>
             </LinearLayout>

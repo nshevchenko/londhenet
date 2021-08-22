@@ -1,6 +1,8 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color gray
+color light_gray
 color purple_200
 color purple_500
 color purple_700
@@ -18,6 +20,8 @@ string invalid_password
 string invalid_username
 string login_failed
 string map_id
+string offline
+string online
 string performance1
 string performance2
 string prompt_email
