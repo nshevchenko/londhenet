@@ -1,9 +1,8 @@
 package com.cryptofuture.londhenet.di
 
 import android.app.Application
-import com.cryptofuture.login.databinding.FragmentLoginBinding
 import com.cryptofuture.login.di.LoginBindings
-import com.cryptofuture.map.di.MapBindings
+import com.cryptofuture.prediction.di.MapBindings
 import com.cryptofuture.londhenet.App
 import com.cryptofuture.londhenet.lib.core.injection.ApplicationScope
 import com.cryptofuture.londhenet.lib.network.di.RetrofitModule

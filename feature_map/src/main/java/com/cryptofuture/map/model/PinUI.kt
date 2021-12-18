@@ -12,5 +12,5 @@ data class PinUI(
     val performance1: String,
     val performance2: String,
     val position: LatLng,
-    val directions: List<Pair<Int, String>>
+    val directions: List<Int>
 )

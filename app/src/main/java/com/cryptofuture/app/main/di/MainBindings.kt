@@ -1,7 +1,7 @@
 package com.cryptofuture.londhenet.main.di
 
 import com.cryptofuture.londhenet.lib.core.injection.ActivityScope
-import com.cryptofuture.londhenet.main.MainActivity
+import com.cryptofuture.app.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

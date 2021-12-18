@@ -36,4 +36,5 @@ dependencies {
 
     implementation project(":feature_login")
     implementation project(":feature_map")
+    implementation project(":feature_prediction")
 }

@@ -8,7 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import androidx.core.content.ContextCompat
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import com.cryptofuture.londhenet.lib.core.feature.BaseFragment
 import com.cryptofuture.londhenet.lib.core.util.observe
 import com.cryptofuture.map.R
@@ -17,18 +18,12 @@ import com.cryptofuture.map.model.MapPin
 import com.cryptofuture.map.model.PinUI
 import com.cryptofuture.map.viewmodel.MapViewModel
 import com.cryptofuture.map.viewmodel.MapViewModel.Event
-import com.github.mikephil.charting.animation.Easing
-import com.github.mikephil.charting.charts.RadarChart
-import com.github.mikephil.charting.components.AxisBase
-import com.github.mikephil.charting.data.RadarData
-import com.github.mikephil.charting.data.RadarDataSet
-import com.github.mikephil.charting.data.RadarEntry
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.google.android.libraries.maps.CameraUpdateFactory
 import com.google.android.libraries.maps.GoogleMap
 import com.google.android.libraries.maps.MapView
 import com.google.android.libraries.maps.model.CameraPosition
 import com.google.android.libraries.maps.model.LatLng
+import com.google.android.libraries.maps.model.Marker
 import com.google.android.libraries.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import javax.inject.Inject
@@ -40,6 +35,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map) {
     lateinit var viewModel: MapViewModel
 
     private var googleMap: GoogleMap? = null
+    private var selectedPin: Marker? = null
     private var bottomSheet: BottomSheetBehavior<LinearLayout>? = null
 
     override fun onCreateView(
@@ -102,8 +98,11 @@ class MapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map) {
             uiSettings.isMapToolbarEnabled = false
             setMinZoomPreference(9F)
             setOnMarkerClickListener {
+                selectedPin?.setIcon(bitmapDescriptorFromVector(requireContext(), R.drawable.hotspot_online))
+                selectedPin = it
+                it.setIcon(bitmapDescriptorFromVector(requireContext(), R.drawable.hotspot_online_selected, 2F))
                 viewModel.onMarkerClicked(it.tag.toString())
-                googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(it.position, 14f))
+                googleMap?.animateCamera(CameraUpdateFactory.newLatLng(it.position))
                 true
             }
         }
@@ -139,51 +138,24 @@ class MapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map) {
         bottomSheet?.state = BottomSheetBehavior.STATE_COLLAPSED
         binding.apply {
             name.text = hotspot.name
-            perf1.text = hotspot.performance1
+            perf1.text = "${hotspot.performance1} dBi"
             perf2.text = hotspot.performance2
             address.text = hotspot.address
             address.setOnClickListener { copyToClipBoard(hotspot.address) }
             copyLabel.setOnClickListener { copyToClipBoard(hotspot.address) }
-            customiseChart(chart, hotspot)
+            legendData.text = getLegendData(hotspot.directions)
+            legendLabels.text = getLegendLabels()
+            customiseChart(requireContext(), chart, hotspot)
         }
     }
 
-    private fun customiseChart(chart: RadarChart, hotspot: PinUI) {
-        val lightGray = ContextCompat.getColor(requireContext(), R.color.light_gray)
-        val color1 = ContextCompat.getColor(requireContext(), R.color.purple_200)
-        val color2 = ContextCompat.getColor(requireContext(), R.color.colorPrimary)
-        val padding = resources.getDimension(R.dimen.spacing_4)
-        val labels = listOf("N", "NE", "E", "SE", "S", "SW", "W", "NW")
-        val datatSet =
-            RadarDataSet(hotspot.directions.map { RadarEntry(it.first.toFloat()) }, "")
-                .apply {
-                    setDrawValues(false)
-                    lineWidth = 3f
-                    setDrawFilled(true)
-                    fillColor = color1
-                    setColors(color1)
-                    valueFormatter = object : IndexAxisValueFormatter() {
-                        override fun getFormattedValue(value: Float, axis: AxisBase): String {
-                            return labels[value.toInt()]
-                        }
-                    }
-                }
+    private fun getLegendData(directions: List<Int>): String {
+        return directions.mapIndexed { _, i -> "$i" }.joinToString("\n")
+    }
 
-        chart.apply {
-            setExtraOffsets(padding, padding, padding, padding)
-            webAlpha = 100
-            skipWebLineCount = 3
-            setTouchEnabled(false)
-            xAxis.valueFormatter = IndexAxisValueFormatter(labels)
-            xAxis.textColor = lightGray
-            yAxis.setDrawLabels(false)
-            legend.isEnabled = false
-            description.isEnabled = false
-            isRotationEnabled = false
-            data = RadarData(datatSet)
-            chart.animateXY(400, 400, Easing.EaseInOutQuad)
-            invalidate()
-        }
+    private fun getLegendLabels(): String {
+        val labels = listOf("N  ", "NE", "E  ", "SE", "S  ", "SW", "W  ", "NW")
+        return labels.joinToString("\n")
     }
 
     private fun showError(message: Int) {
@@ -199,6 +171,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map) {
         (requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).apply {
             val clip = ClipData.newPlainText("label", address)
             setPrimaryClip(clip)
+            Toast.makeText(requireContext(), "Text copied!", LENGTH_SHORT).show()
         }
     }
 

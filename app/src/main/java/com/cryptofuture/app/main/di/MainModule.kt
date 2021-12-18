@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.cryptofuture.londhenet.lib.core.injection.ActivityScope
 import com.cryptofuture.londhenet.lib.core.injection.ViewModelKey
 import com.cryptofuture.londhenet.lib.core.viewmodel.ViewModelFactory
-import com.cryptofuture.londhenet.main.MainActivity
+import com.cryptofuture.app.main.MainActivity
 import com.cryptofuture.londhenet.main.viewmodel.MainViewModel
 import com.cryptofuture.londhenet.main.viewmodel.MainViewModelImpl
 import dagger.Binds
