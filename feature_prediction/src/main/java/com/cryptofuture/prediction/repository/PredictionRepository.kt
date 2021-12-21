@@ -1,5 +1,6 @@
 package com.cryptofuture.prediction.repository
 
+import android.location.Location
 import com.cryptofuture.prediction.datasource.PredictionJsonDataSource
 import com.cryptofuture.prediction.model.PredictionDetails
 import com.google.android.libraries.maps.model.LatLng
@@ -11,34 +12,45 @@ class PredictionRepository @Inject constructor(
     private val fileDataSource: PredictionJsonDataSource
 ) {
 
-    fun loadPositionPredicton(): PredictionDetails {
-        val result = JSONArray(fileDataSource.getPins())
-        val list = mutableListOf<PredictionDetails>()
+    fun predictReward(clickPosition: LatLng): PredictionDetails? {
+        val result = JSONArray(fileDataSource.getPredictionsData())
+        var closestPoint: PredictionDetails? = null
         for (i in 0 until result.length()) {
             val item = result.getJSONObject(i).toDomain()
-            list.add(item)
+            if (isItemCloser(closestPoint?.position, item.position, clickPosition))
+                closestPoint = item
         }
-        return PredictionDetails()
+        return closestPoint
+    }
+
+    private fun isItemCloser(closestPoint: LatLng?, item: LatLng, clickPosition: LatLng): Boolean {
+        val newDistance = getDistance(clickPosition, item)
+        val bestDistance = getDistance(closestPoint, clickPosition)
+        return newDistance < bestDistance
+    }
+
+    private fun getDistance(
+        pointA: LatLng?,
+        pointB: LatLng
+    ): Float {
+        if (pointA == null) {
+            return 0f
+        }
+        val results = FloatArray(1)
+        Location.distanceBetween(
+            pointA.latitude,
+            pointA.longitude,
+            pointB.latitude,
+            pointB.longitude,
+            results
+        )
+        return results[0]
     }
 }
 
 private fun JSONObject.toDomain(): PredictionDetails =
     PredictionDetails(
-        name = this.getString("name"),
-        address = this.getString("address"),
-//        online = this.getString("status") == "online",
-        online = true,
-        performance1 = this.getDouble("ref_rss"),
-        performance2 = this.getDouble("beac_rate"),
         position = LatLng(this.getDouble("lat"), this.getDouble("lng")),
-        directionsPerf = Directions(
-            n = this.getInt("w_N"),
-            ne = this.getInt("w_NE"),
-            e = this.getInt("w_E"),
-            se = this.getInt("w_SE"),
-            s = this.getInt("w_S"),
-            sw = this.getInt("w_SW"),
-            w = this.getInt("w_W"),
-            nw = this.getInt("w_NW")
-        )
+        refRss = this.getDouble("ref_rss"),
+        reward = this.getDouble("estimated_average_reward")
     )

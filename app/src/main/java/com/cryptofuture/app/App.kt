@@ -1,7 +1,7 @@
-package com.cryptofuture.londhenet
+package com.cryptofuture.app
 
 import androidx.databinding.DataBindingUtil
-import com.cryptofuture.londhenet.di.DaggerAppComponent
+import com.cryptofuture.app.di.DaggerAppComponent
 import com.cryptofuture.londhenet.di.databinding.DaggerBindingComponent
 import com.cryptofuture.londhenet.di.databinding.DataBindingModule
 import dagger.android.AndroidInjector

@@ -62,185 +62,54 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="16dp">
-
-                <TextView
-                    android:id="@+id/name"
-                    style="@style/TextAppearance.AppCompat.Title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:paddingBottom="2dp"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Title orca-hello-test" />
-
-                <TextView
-                    android:id="@+id/address"
-                    style="@style/TextAppearance.AppCompat.Caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="16dp"
-                    android:textColor="@color/gray"
-                    android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/name"
-                    tools:text="11fjtGeLya3G3WyaGYU5RQUFDYxindLhgDqwYdybfmFktY7faY5" />
-
-                <View
-                    android:id="@+id/copyLabel"
-                    android:layout_width="14sp"
-                    android:layout_height="14dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="4dp"
-                    android:background="@drawable/ic_baseline_content_copy_24"
-                    app:layout_constraintStart_toEndOf="@id/address"
-                    app:layout_constraintTop_toTopOf="@id/address" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="#B6B6B6" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="16dp"
-                android:orientation="horizontal">
+                android:paddingEnd="16dp">
 
-                <LinearLayout
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingEnd="16dp">
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Ref RSS"
+                    android:textColor="@color/light_gray"
+                    android:textSize="12sp" />
 
-                    <TextView
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Ref RSS"
-                        android:textColor="@color/light_gray"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/perf1"
-                        style="@style/TextAppearance.AppCompat.Body2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="0.223" />
-
-                    <TextView
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Beaconing rate"
-                        android:textColor="@color/light_gray"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/perf2"
-                        style="@style/TextAppearance.AppCompat.Body2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginBottom="32dp"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="0.223" />
-                </LinearLayout>
-
-                <FrameLayout
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/perf1"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1">
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:text="0.223" />
 
-                    <TextView
-                        android:id="@+id/title_chart"
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="Witness windrose"
-                        android:textColor="@color/light_gray"
-                        android:textSize="12sp" />
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Estimated Avarage Reward"
+                    android:textColor="@color/light_gray"
+                    android:textSize="12sp" />
 
-                    <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="1dp"
-                        android:padding="24dp"
-                        android:src="@drawable/ic_wind_rose2" />
+                <TextView
+                    android:id="@+id/perf2"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:text="0.223" />
 
-                    <com.github.mikephil.charting.charts.RadarChart
-                        android:id="@+id/chart"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginEnd="16dp"
-                        android:minHeight="150dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/graph" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="16dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/legendLabels"
-                            style="@style/TextAppearance.AppCompat.Caption"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:paddingTop="16dp"
-                            android:minWidth="6dp"
-                            android:paddingEnd="8dp"
-                            android:textColor="@color/light_gray"
-                            android:textSize="11sp"
-                            tools:text="NE" />
-
-                        <TextView
-                            android:id="@+id/legendData"
-                            style="@style/TextAppearance.AppCompat.Caption"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:paddingTop="16dp"
-                            android:paddingEnd="16dp"
-                            android:textColor="@color/white"
-                            android:textSize="11sp"
-                            android:textStyle="bold"
-                            tools:text="5" />
-                    </LinearLayout>
-
-                </FrameLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

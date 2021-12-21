@@ -1,4 +1,4 @@
-package com.cryptofuture.londhenet.lib.core.coroutines
+package com.cryptofuture.newapp.lib.core.coroutines
 
 import kotlin.coroutines.CoroutineContext
 

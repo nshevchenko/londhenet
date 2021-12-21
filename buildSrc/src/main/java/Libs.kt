@@ -92,6 +92,8 @@ object Libs {
 
     const val maps_ktx = "com.google.maps.android:maps-ktx:" + Versions.maps_ktx
 
+    const val maps_utils_ktx = "com.google.maps.android:maps-utils-ktx:" + Versions.maps_ktx_utils
+
     const val floating_search_bar = "com.github.mancj:MaterialSearchBar:" + Versions.floating_search_bar
 
     const val timber = "com.jakewharton.timber:timber:" + Versions.timber

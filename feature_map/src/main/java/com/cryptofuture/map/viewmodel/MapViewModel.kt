@@ -4,15 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchers
+import com.cryptofuture.newapp.lib.core.coroutines.CoroutineDispatchers
+import com.cryptofuture.londhenet.lib.core.injection.ApplicationScope
 import com.cryptofuture.map.mapper.toUI
 import com.cryptofuture.map.model.MapPin
 import com.cryptofuture.map.model.Pin
 import com.cryptofuture.map.model.PinUI
 import com.cryptofuture.map.repository.MapRepository
 import com.cryptofuture.map.viewmodel.MapViewModel.Event
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Thread.sleep
 import javax.inject.Inject
 
 interface MapViewModel {
@@ -48,9 +51,10 @@ class MapViewModelImpl @Inject constructor(
     override fun loadPins() {
         viewModelScope.launch(dispatchers.io) {
             val result = mapRepository.loadPins()
+            val mapped = result.map { it.toMapPin() }
             withContext(dispatchers.main) {
                 hotspots.value = result
-                _pins.value = result.map { it.toMapPin() }
+                _pins.value = mapped
             }
         }
     }
@@ -64,6 +68,5 @@ class MapViewModelImpl @Inject constructor(
 
 private fun Pin.toMapPin() = MapPin(
     name = this.name,
-    online = this.online,
-    position = this.position
+    latLng = this.position
 )

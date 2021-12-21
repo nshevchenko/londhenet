@@ -10,9 +10,9 @@ class PredictionJsonDataSource @Inject constructor(
     private val context: Context
 ) {
 
-    fun getPins(): String {
+    fun getPredictionsData(): String {
         val inputStream: InputStream =
-            context.resources.openRawResource(R.raw.london_table_app_feature1)
+            context.resources.openRawResource(R.raw.rewards)
         val writer: Writer = StringWriter()
         val buffer = CharArray(1024)
         inputStream.use { inputStream ->

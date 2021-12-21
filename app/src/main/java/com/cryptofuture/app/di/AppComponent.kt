@@ -1,12 +1,14 @@
-package com.cryptofuture.londhenet.di
+package com.cryptofuture.app.di
 
 import android.app.Application
 import com.cryptofuture.login.di.LoginBindings
-import com.cryptofuture.prediction.di.MapBindings
-import com.cryptofuture.londhenet.App
+import com.cryptofuture.app.App
+import com.cryptofuture.londhenet.di.AppModule
 import com.cryptofuture.londhenet.lib.core.injection.ApplicationScope
 import com.cryptofuture.londhenet.lib.network.di.RetrofitModule
-import com.cryptofuture.londhenet.main.di.MainBindings
+import com.cryptofuture.app.main.di.MainBindings
+import com.cryptofuture.map.di.MapBindings
+import com.cryptofuture.prediction.di.PredictionBindings
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -19,7 +21,8 @@ import dagger.android.support.DaggerApplication
         RetrofitModule::class,
         MainBindings::class,
         MapBindings::class,
-        LoginBindings::class
+        LoginBindings::class,
+        PredictionBindings::class
     ]
 )
 interface AppComponent : AndroidInjector<DaggerApplication> {

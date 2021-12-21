@@ -1,10 +1,10 @@
-package com.cryptofuture.map.ui
+package com.cryptofuture.prediction.ui
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import androidx.core.content.ContextCompat
-import com.cryptofuture.map.R
+import com.cryptofuture.prediction.R
 import com.google.android.libraries.maps.model.BitmapDescriptor
 import com.google.android.libraries.maps.model.BitmapDescriptorFactory
 

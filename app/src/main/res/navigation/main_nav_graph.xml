@@ -6,4 +6,6 @@
 
     <include app:graph="@navigation/map_nav_graph" />
 
+    <include app:graph="@navigation/prediction_nav_graph" />
+
 </navigation>

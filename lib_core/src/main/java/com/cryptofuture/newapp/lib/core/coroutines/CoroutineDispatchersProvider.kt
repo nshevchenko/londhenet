@@ -1,4 +1,4 @@
-package com.cryptofuture.londhenet.lib.core.coroutines
+package com.cryptofuture.newapp.lib.core.coroutines
 
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject

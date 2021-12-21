@@ -2,8 +2,8 @@ package com.cryptofuture.londhenet.di
 
 import android.app.Application
 import android.content.Context
-import com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchers
-import com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchersProvider
+import com.cryptofuture.newapp.lib.core.coroutines.CoroutineDispatchers
+import com.cryptofuture.newapp.lib.core.coroutines.CoroutineDispatchersProvider
 import com.cryptofuture.londhenet.lib.network.di.NetworkModule
 import dagger.Module
 import dagger.Provides

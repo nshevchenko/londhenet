@@ -4,27 +4,23 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchers
-import com.cryptofuture.map.model.MapPin
-import com.cryptofuture.map.model.Pin
-import com.cryptofuture.map.model.PinUI
+import com.cryptofuture.newapp.lib.core.coroutines.CoroutineDispatchers
+import com.cryptofuture.prediction.model.PredictionDetails
 import com.cryptofuture.prediction.repository.PredictionRepository
 import com.cryptofuture.prediction.viewmodel.PredictionViewModel.Event
+import com.google.android.libraries.maps.model.LatLng
 import kotlinx.coroutines.launch
-import okhttp3.CertificatePinner
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 interface PredictionViewModel {
 
     sealed class Event {
-        object NavigateToMain : Event()
-        data class ShowError(val message: Int) : Event()
-        class ShowDetails(val hotspot: PinUI) : Event()
+        class ShowDetails(val details: PredictionDetails) : Event()
     }
 
-    val event: LiveData<Event>
-
-    fun loadPins()
+    val prediction: LiveData<Event>
+    fun predictReward(clickPosition: LatLng)
 }
 
 class PredictionViewModelImpl @Inject constructor(
@@ -32,17 +28,16 @@ class PredictionViewModelImpl @Inject constructor(
     private val dispatchers: CoroutineDispatchers
 ) : ViewModel(), PredictionViewModel {
 
-    private val _event = MutableLiveData<Event>()
-    override val event: LiveData<Event>
-        get() = _event
+    private val _prediction = MutableLiveData<Event>()
+    override val prediction: LiveData<Event>
+        get() = _prediction
 
-    override fun loadPins() {
+    override fun predictReward(clickPosition: LatLng) {
         viewModelScope.launch(dispatchers.io) {
-//            val result = predictionRepository.loadPins()
-//            withContext(dispatchers.main) {
-//                hotspots.value = result
-//                _pins.value = result.map { it.toMapPin() }
-//            }
+            val result = predictionRepository.predictReward(clickPosition)
+            withContext(dispatchers.main) {
+                result?.let { _prediction.value = Event.ShowDetails(result) }
+            }
         }
     }
 }

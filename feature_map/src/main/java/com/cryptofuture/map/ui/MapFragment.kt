@@ -4,6 +4,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,8 +25,9 @@ import com.google.android.libraries.maps.MapView
 import com.google.android.libraries.maps.model.CameraPosition
 import com.google.android.libraries.maps.model.LatLng
 import com.google.android.libraries.maps.model.Marker
-import com.google.android.libraries.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.maps.android.clustering.ClusterManager
+import com.google.maps.android.clustering.algo.NonHierarchicalViewBasedAlgorithm
 import javax.inject.Inject
 
 
@@ -97,34 +99,70 @@ class MapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map) {
         googleMap?.apply {
             uiSettings.isMapToolbarEnabled = false
             setMinZoomPreference(9F)
-            setOnMarkerClickListener {
-                selectedPin?.setIcon(bitmapDescriptorFromVector(requireContext(), R.drawable.hotspot_online))
-                selectedPin = it
-                it.setIcon(bitmapDescriptorFromVector(requireContext(), R.drawable.hotspot_online_selected, 2F))
-                viewModel.onMarkerClicked(it.tag.toString())
-                googleMap?.animateCamera(CameraUpdateFactory.newLatLng(it.position))
-                true
-            }
         }
     }
 
     private fun displayPins(pins: List<MapPin>) {
-        pins.forEach { pin ->
-            val vectorResId =
-                if (pin.online) R.drawable.hotspot_online else R.drawable.hotspot_offline
-            val marker = MarkerOptions().apply {
-                position(pin.position)
-                title(pin.name)
-                icon(bitmapDescriptorFromVector(requireContext(), vectorResId))
-            }
-            googleMap?.addMarker(marker)?.tag = pin.name
+        val metrics = DisplayMetrics()
+        requireActivity().windowManager.defaultDisplay.getMetrics(metrics)
+
+        googleMap?.let {
+            val clusterManager = ClusterManager<MapPin>(requireContext(), it)
+            it.setOnCameraIdleListener(clusterManager)
+            it.setOnMarkerClickListener(clusterManager)
+            customiseClustering(clusterManager, it, metrics, pins)
         }
+    }
+
+    private fun customiseClustering(
+        clusterManager: ClusterManager<MapPin>,
+        it: GoogleMap,
+        metrics: DisplayMetrics,
+        pins: List<MapPin>
+    ) {
+        clusterManager.renderer = CustomCluster(requireContext(), it, clusterManager)
+        clusterManager.algorithm =
+            NonHierarchicalViewBasedAlgorithm<MapPin>(metrics.widthPixels, metrics.heightPixels)
+        clusterManager.addItems(pins)  // 4
+        clusterManager.cluster()  // 5
+        clusterManager.setAnimation(false)
+
+        clusterManager.getMarkerCollection()
+            .setOnMarkerClickListener(getMakerClick(clusterManager))
     }
 
     override fun onLowMemory() {
         super.onLowMemory()
         binding.mapView.onLowMemory()
     }
+
+    private fun getMakerClick(
+        clusterManager: ClusterManager<MapPin>
+    ): GoogleMap.OnMarkerClickListener {
+        return GoogleMap.OnMarkerClickListener { marker ->
+            selectedPin?.let {
+                if (clusterManager.markerCollection.getMarkers().contains(it))
+                    selectedPin?.setIcon(getGreenCircle())
+            }
+            selectedPin = marker
+            marker.setIcon(
+                bitmapDescriptorFromVector(
+                    requireContext(),
+                    R.drawable.hotspot_online_selected,
+                    2F
+                )
+            )
+
+            viewModel.onMarkerClicked(marker.title)
+            //                googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.latLng, 13.5f))
+            true
+        }
+    }
+
+    private fun getGreenCircle() = bitmapDescriptorFromVector(
+        requireContext(),
+        R.drawable.hotspot_online
+    )
 
     private fun handleViewModelEvents(event: Event) {
         when (event) {

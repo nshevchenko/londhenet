@@ -9,7 +9,7 @@ import com.cryptofuture.login.R
 import com.cryptofuture.login.repository.LoginRepository
 import com.cryptofuture.login.viewmodel.LoginViewModel.Event
 import com.cryptofuture.login.viewmodel.LoginViewModel.Event.ShowError
-import com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchers
+import com.cryptofuture.newapp.lib.core.coroutines.CoroutineDispatchers
 import com.cryptofuture.londhenet.lib.network.ResultType
 import kotlinx.coroutines.launch
 import javax.inject.Inject

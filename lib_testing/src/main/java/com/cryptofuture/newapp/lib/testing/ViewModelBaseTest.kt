@@ -1,7 +1,6 @@
 package com.cryptofuture.londhenet.lib.testing
 
-import com.cryptofuture.londhenet.lib.core.coroutines.CoroutineDispatchers
-import com.cryptofuture.londhenet.lib.testing.BaseTest
+import com.cryptofuture.newapp.lib.core.coroutines.CoroutineDispatchers
 import io.mockk.every
 import kotlinx.coroutines.Dispatchers
 

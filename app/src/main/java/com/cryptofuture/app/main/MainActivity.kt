@@ -7,7 +7,7 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.cryptofuture.londhenet.R
 import com.cryptofuture.londhenet.databinding.ActivityMainBinding
 import com.cryptofuture.londhenet.lib.core.feature.BaseActivity
-import com.cryptofuture.londhenet.main.viewmodel.MainViewModel
+import com.cryptofuture.app.main.viewmodel.MainViewModel
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
@@ -36,7 +36,7 @@ class MainActivity : BaseActivity() {
                     item.itemId == R.id.action_dicover && it.currentDestination?.id != R.id.map_fragment ->
                         it.navigate(R.id.map_nav_graph)
                     item.itemId == R.id.action_prediction && it.currentDestination?.id != R.id.prediction_fragment ->
-                        it.navigate(R.id.prediction_fragment)
+                        it.navigate(R.id.prediction_nav_graph)
                 }
                 true
             }

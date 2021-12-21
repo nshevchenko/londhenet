@@ -1,4 +1,4 @@
-package com.cryptofuture.londhenet.main.viewmodel
+package com.cryptofuture.app.main.viewmodel
 
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject
