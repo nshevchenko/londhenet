@@ -154,7 +154,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map) {
             )
 
             viewModel.onMarkerClicked(marker.title)
-            //                googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.latLng, 13.5f))
+            googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.position, 14f))
             true
         }
     }

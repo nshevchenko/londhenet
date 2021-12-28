@@ -25,7 +25,7 @@ class PredictionFragment : BaseFragment<FragmentPredictionBinding>(R.layout.frag
 
 
     @Inject
-    lateinit var viewModel: PredictionViewModel
+    lateinit var predictionViewModel: PredictionViewModel
 
     private var marker: Marker? = null
     private var googleMap: GoogleMap? = null
@@ -50,20 +50,24 @@ class PredictionFragment : BaseFragment<FragmentPredictionBinding>(R.layout.frag
         adjustInsets()
     }
 
-
     override fun onResume() {
         super.onResume()
         binding.mapView.onResume()
     }
 
     private fun onMapReady(map: GoogleMap) {
-        map.animateCamera(
+        map.moveCamera(
             CameraUpdateFactory.newCameraPosition(
                 CameraPosition(LatLng(51.510822, -0.105035), 12F, 0F, 0F)
             )
         )
         googleMap = map
-        map.setOnMapClickListener { viewModel.predictReward(it) }
+        map.setOnMapClickListener {
+            predictionViewModel.predictReward(it)
+            drawPin(it)
+            binding.loading.visibility = View.VISIBLE
+        }
+        predictionViewModel.loadRewards()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -87,9 +91,8 @@ class PredictionFragment : BaseFragment<FragmentPredictionBinding>(R.layout.frag
     }
 
     private fun handleViewModelEvents(event: PredictionViewModel.Event) {
-        when(event){
+        when (event) {
             is PredictionViewModel.Event.ShowDetails -> {
-                drawPin(event.details.position)
                 showDetails(event.details)
             }
         }
@@ -97,9 +100,20 @@ class PredictionFragment : BaseFragment<FragmentPredictionBinding>(R.layout.frag
 
     private fun showDetails(details: PredictionDetails) {
         bottomSheet?.state = BottomSheetBehavior.STATE_COLLAPSED
+
         binding.apply {
+            loading.visibility = View.GONE
             perf1.text = "${details.refRss} dBi"
-            perf2.text =  "${details.reward}"
+            perf2.text = "${details.reward}"
+
+            maxDatumReward.text = "min : ${predictionViewModel.minReward} / max: ${predictionViewModel.maxReward}"
+            maxDatumRssi.text = "min : ${predictionViewModel.minRssi} / max: ${predictionViewModel.maxRssi}"
+
+            progressRef2.max = (predictionViewModel.maxReward * 200).toInt()
+            progressRssi.max = ((predictionViewModel.maxRssi - predictionViewModel.minRssi) * 200).toInt()
+
+            progressRef2.progress = (details.reward * 200).toInt()
+            progressRssi.progress = ((details.refRss - predictionViewModel.minRssi) * 200).toInt()
         }
     }
 
@@ -114,11 +128,48 @@ class PredictionFragment : BaseFragment<FragmentPredictionBinding>(R.layout.frag
     }
 
     private fun setupViewModel() {
-        viewModel.apply {
+        predictionViewModel.apply {
             observe(prediction) { handleViewModelEvents(it) }
+//            observe(rewards) { showSquares(it) }
             binding.viewModel = this
         }
     }
+
+//    private var provider: HeatmapTileProvider? = null
+//    private var overlay: TileOverlay? = null
+//
+//    private fun showSquares(rewards: List<WeightedLatLng>) {
+//        val colors = intArrayOf(
+//            Color.rgb(255, 0, 0), // red
+//            Color.rgb(102, 225, 0)  // green
+//        )
+//        val startPoints = floatArrayOf(0.2f, 1f)
+//        val gradient = Gradient(colors, startPoints)
+//        val maxValue = rewards.maxBy { it.intensity }?.intensity ?: 0.0
+//
+//        provider = HeatmapTileProvider.Builder()
+//            .weightedData(rewards.map { it })
+//            .maxIntensity(maxValue)
+//            .opacity(0.7)
+//            .radius(50)
+//            .gradient(gradient)
+//            .build()
+//
+//        overlay = googleMap?.addTileOverlay(TileOverlayOptions().tileProvider(provider))
+//
+//        googleMap?.setOnCameraIdleListener {
+//            googleMap?.cameraPosition?.zoom?.let {
+//                if (it < 15 && it > 13) {
+//                    provider?.setOpacity(0.7)
+//                    overlay?.clearTileCache()
+//                } else {
+//                    provider?.setRadius(50)
+//                    provider?.setOpacity(0.0)
+//                    overlay?.clearTileCache()
+//                }
+//            }
+//        }
+//    }
 
     private fun setupBinding() {
         binding.mapView.getMapAsync { map -> onMapReady(map) }

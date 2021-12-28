@@ -130,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:text="Ref RSS"
+                        android:text="Reference RSSI"
                         android:textColor="@color/light_gray"
                         android:textSize="12sp" />
 
@@ -150,7 +150,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:text="Beaconing rate"
+                        android:text="Successful Beaconing Rate"
                         android:textColor="@color/light_gray"
                         android:textSize="12sp" />
 

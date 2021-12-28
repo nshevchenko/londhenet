@@ -54,7 +54,7 @@
             android:id="@+id/bottomSheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#353535"
+            android:background="@color/card_dark"
             android:orientation="vertical"
             app:behavior_hideable="true"
             app:behavior_peekHeight="350dp"
@@ -62,55 +62,148 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="16dp"
-                android:paddingEnd="16dp">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Caption"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Ref RSS"
-                    android:textColor="@color/light_gray"
-                    android:textSize="12sp" />
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical"
+                    android:paddingEnd="16dp">
 
-                <TextView
-                    android:id="@+id/perf1"
-                    style="@style/TextAppearance.AppCompat.Body2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    tools:text="0.223" />
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Expected Reference RSSI"
+                        android:textColor="@color/light_gray"
+                        android:textSize="14sp" />
 
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Estimated Avarage Reward"
-                    android:textColor="@color/light_gray"
-                    android:textSize="12sp" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/perf2"
-                    style="@style/TextAppearance.AppCompat.Body2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="32dp"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    tools:text="0.223" />
+                        <TextView
+                            android:id="@+id/perf1"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="0.223" />
 
-            </LinearLayout>
+                        <SeekBar
+                            android:id="@+id/progressRssi"
+                            android:layout_width="200dp"
+                            android:layout_height="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:progressDrawable="@drawable/gradient_progress_rssi"
+                            android:thumb="@drawable/thumb"
+                            app:layout_constraintBottom_toBottomOf="@id/perf1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="100"
+                            app:layout_constraintTop_toTopOf="@id/perf1" />
+
+                        <TextView
+                            android:id="@+id/maxDatumRssi"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="2dp"
+                            android:text="max: 0.44"
+                            android:textColor="@color/light_gray"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@id/progressRssi"
+                            app:layout_constraintTop_toBottomOf="@id/progressRssi" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="26dp"
+                        android:text="Expected Daily Rewards "
+                        android:textColor="@color/light_gray"
+                        android:textSize="14sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/perf2"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="0.223" />
+
+                        <SeekBar
+                            android:id="@+id/progressRef2"
+                            android:layout_width="200dp"
+                            android:layout_height="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:clipChildren="false"
+                            android:progressDrawable="@drawable/gradient_progress_reward"
+                            android:thumb="@drawable/thumb"
+                            app:layout_constraintBottom_toBottomOf="@id/perf2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="100"
+                            app:layout_constraintTop_toTopOf="@id/perf2" />
+
+                        <TextView
+                            android:id="@+id/maxDatumReward"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="2dp"
+                            android:text="max: 0.44"
+                            android:textColor="@color/light_gray"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@id/progressRef2"
+                            app:layout_constraintTop_toBottomOf="@id/progressRef2" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/card_dark"
+                    android:indeterminateTint="@color/light_gray"
+                    android:padding="50dp"
+                    tools:visibility="gone" />
+
+            </FrameLayout>
+
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

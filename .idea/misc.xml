@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.340625" />
         <entry key="app/src/main/res/drawable/ic_underground_1.xml" value="0.340625" />
         <entry key="app/src/main/res/drawable/ic_underground_1__1_.xml" value="0.340625" />
+        <entry key="app/src/main/res/drawable/icon_tint.xml" value="0.18796296296296297" />
         <entry key="app/src/main/res/drawable/underground_bg_logo.xml" value="0.5494791666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.32447916666666665" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.340625" />
@@ -25,8 +26,13 @@
         <entry key="feature_map/src/main/res/drawable/ic_wind_rose.xml" value="0.3536458333333333" />
         <entry key="feature_map/src/main/res/drawable/ic_wind_rose2.xml" value="0.3614583333333333" />
         <entry key="feature_map/src/main/res/layout/bottom_sheet_behavior.xml" value="0.28229166666666666" />
-        <entry key="feature_map/src/main/res/layout/fragment_map.xml" value="0.45" />
+        <entry key="feature_map/src/main/res/layout/fragment_map.xml" value="0.5" />
         <entry key="feature_map/src/main/res/xml/searchable.xml" value="0.3171875" />
+        <entry key="feature_prediction/src/main/res/drawable/gradient_progress_horizontal.xml" value="0.3140625" />
+        <entry key="feature_prediction/src/main/res/drawable/gradient_progress_rssi.xml" value="0.228125" />
+        <entry key="feature_prediction/src/main/res/drawable/hotspot_online.xml" value="0.2712962962962963" />
+        <entry key="feature_prediction/src/main/res/drawable/thumb.xml" value="0.2712962962962963" />
+        <entry key="feature_prediction/src/main/res/layout/fragment_prediction.xml" value="0.33" />
       </map>
     </option>
   </component>

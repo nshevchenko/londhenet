@@ -26,7 +26,7 @@ class PredictionRepository @Inject constructor(
     private fun isItemCloser(closestPoint: LatLng?, item: LatLng, clickPosition: LatLng): Boolean {
         val newDistance = getDistance(clickPosition, item)
         val bestDistance = getDistance(closestPoint, clickPosition)
-        return newDistance < bestDistance
+        return newDistance < bestDistance || closestPoint == null
     }
 
     private fun getDistance(
@@ -46,11 +46,23 @@ class PredictionRepository @Inject constructor(
         )
         return results[0]
     }
+
+    fun loadRewards(): List<PredictionDetails> {
+        val result = JSONArray(fileDataSource.getPredictionsData())
+        val list = mutableListOf<PredictionDetails>()
+        for (i in 0 until result.length()) {
+            val item = result.getJSONObject(i).toDomain()
+            if(item.reward != 0.0) {
+                list.add(item)
+            }
+        }
+        return list
+    }
 }
 
 private fun JSONObject.toDomain(): PredictionDetails =
     PredictionDetails(
-        position = LatLng(this.getDouble("lat"), this.getDouble("lng")),
-        refRss = this.getDouble("ref_rss"),
-        reward = this.getDouble("estimated_average_reward")
+        position = LatLng(this.getDouble("t"), this.getDouble("n")),
+        refRss = this.getDouble("d"),
+        reward = this.getDouble("r")
     )

@@ -31,6 +31,8 @@
             android:id="@+id/mainBottomNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:itemIconTint="@drawable/icon_tint"
+            app:itemTextColor="@drawable/icon_tint"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@color/cardview_dark_background"
             app:layout_constraintStart_toStartOf="parent"

@@ -17,12 +17,8 @@ class CustomCluster(
 
     val greenSign : BitmapDescriptor? = bitmapDescriptorFromVector(context, R.drawable.hotspot_online)
 
-
     override fun onBeforeClusterItemRendered(item: MapPin, markerOptions: MarkerOptions) {
         super.onBeforeClusterItemRendered(item, markerOptions)
-        markerOptions.title(item.title)
         markerOptions.icon(greenSign)
     }
-
-
 }

@@ -585,6 +585,7 @@ int color bright_foreground_material_dark 0x0
 int color bright_foreground_material_light 0x0
 int color button_material_dark 0x0
 int color button_material_light 0x0
+int color card_dark 0x0
 int color cardview_dark_background 0x0
 int color cardview_light_background 0x0
 int color cardview_shadow_end_color 0x0
